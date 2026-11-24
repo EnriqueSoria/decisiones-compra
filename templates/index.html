@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="hero">
+  <div class="hero"><div class="hero-copy">
     <h1>Cuaderno de compras</h1>
-    <p>Guarda opciones, reúne fuentes y retoma cada decisión donde la dejaste.</p>
+    <p>Guarda opciones, reúne fuentes y retoma cada decisión donde la dejaste.</p></div>
   </div>
   <section aria-labelledby="seguimiento">
     <div class="section-head">
@@ -20,10 +20,12 @@
     <div class="grid">
       {% for p in productos %}
       <article class="card" data-estado="{{ p.estado }}">
-        <div class="card-top"><span>{{ p.categoria }}</span><span class="pill">{{ p.estado }}</span></div>
+        {% set cover = p.opciones|selectattr('imagenes')|first %}
+        {% if cover %}<a class="collection-photo" href="productos/{{ p.slug }}/index.html" aria-label="Ver {{ p.titulo }}"><img src="{{ cover.imagenes[0].removeprefix('../../') }}" alt="" width="640" height="480"></a>{% endif %}
+        <div class="card-info"><div class="card-top"><span>{{ p.categoria }}</span><span class="pill">{{ p.estado }}</span></div>
         <h3><a href="productos/{{ p.slug }}/index.html">{{ p.titulo }}</a></h3>
         <p>{{ p.resumen }}</p>
-        <div class="card-foot">{{ p.opciones|length }} opciones · {{ p.fuentes|length }} fuentes</div>
+        <div class="card-foot">{{ p.opciones|length }} opciones · {{ p.fuentes|length }} fuentes</div></div>
       </article>
       {% else %}
       <p>Añade una ficha en la carpeta <code>datos/</code> para empezar.</p>

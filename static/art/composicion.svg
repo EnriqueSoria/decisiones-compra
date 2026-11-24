@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 280" fill="none">
+  <defs><pattern id="rayas" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(42)"><path d="M0 0v9" stroke="#597362" stroke-width="2"/></pattern></defs>
+  <circle cx="402" cy="99" r="143" fill="#e3b879"/>
+  <path d="M165 280v-67a111 111 0 0 1 222 0v67z" fill="#c97c60"/>
+  <path d="M480 280V140A140 140 0 0 1 620 0h40v280z" fill="#879787"/>
+  <circle cx="653" cy="261" r="113" fill="#324c41"/>
+  <circle cx="131" cy="292" r="124" fill="url(#rayas)"/>
+  <g stroke="#f6ecd7" stroke-width="2"><circle cx="651" cy="6" r="61"/><circle cx="651" cy="6" r="71"/><circle cx="651" cy="6" r="81"/><circle cx="651" cy="6" r="91"/></g>
+</svg>

@@ -44,6 +44,7 @@ for (const image of document.querySelectorAll("[data-previews]")) {
     const enlarged = viewer.querySelector("img");
     enlarged.src = link.href;
     enlarged.alt = image.alt;
+    viewer.querySelector(".viewer-caption").textContent = image.alt;
     viewer.showModal();
   });
 }

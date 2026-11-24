@@ -8,7 +8,11 @@
 </head>
 <body>
   <header class="site-header"><nav class="wrap" aria-label="Principal">
-    <a class="brand" href="{{ base }}index.html"><span aria-hidden="true">▤</span> Mis compras</a>
+    <a class="brand" href="{{ base }}index.html">
+      <svg aria-hidden="true" viewBox="0 0 32 32" width="32" height="32"><path d="M0 15A15 15 0 0 1 15 0v15Z" fill="#405c49"/><circle cx="24" cy="7.5" r="7.5" fill="#c4785f"/><path d="M0 17h15v15A15 15 0 0 1 0 17Z" fill="#cea86b"/><path d="M17 17h15v15H17z" fill="#405c49"/></svg>
+      Mis compras
+    </a>
+    {% block nav %}{% endblock %}
   </nav></header>
   <main class="wrap">{% block content %}{% endblock %}</main>
   {% if reload_version %}
