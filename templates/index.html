@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="hero">
+    <h1>Cuaderno de compras</h1>
+    <p>Guarda opciones, reúne fuentes y retoma cada decisión donde la dejaste.</p>
+  </div>
+  <section aria-labelledby="seguimiento">
+    <div class="section-head">
+      <h2 id="seguimiento">Mis seguimientos <small>{{ productos|length }}</small></h2>
+      {% if productos %}
+      <div class="filters" hidden>
+        <label for="estado">Estado</label>
+        <select id="estado">
+          <option value="">Todos</option>
+          {% for estado in estados %}<option>{{ estado }}</option>{% endfor %}
+        </select>
+      </div>
+      {% endif %}
+    </div>
+    <div class="grid">
+      {% for p in productos %}
+      <article class="card" data-estado="{{ p.estado }}">
+        <div class="card-top"><span>{{ p.categoria }}</span><span class="pill">{{ p.estado }}</span></div>
+        <h3><a href="productos/{{ p.slug }}/index.html">{{ p.titulo }}</a></h3>
+        <p>{{ p.resumen }}</p>
+        <div class="card-foot">{{ p.opciones|length }} opciones · {{ p.fuentes|length }} fuentes</div>
+      </article>
+      {% else %}
+      <p>Añade una ficha en la carpeta <code>datos/</code> para empezar.</p>
+      {% endfor %}
+    </div>
+    <p id="vacio" role="status" hidden>No hay seguimientos con ese estado.</p>
+  </section>
+  {% if productos %}<script src="{{ base }}assets/filter.js" defer></script>{% endif %}
+{% endblock %}

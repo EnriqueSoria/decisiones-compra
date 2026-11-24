@@ -1,0 +1,7 @@
+.git
+.github
+.idea
+.venv
+.env
+dist
+**/__pycache__

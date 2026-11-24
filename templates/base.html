@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ titulo }}{% if titulo != 'Mis compras' %} · Mis compras{% endif %}</title>
+  <link rel="stylesheet" href="{{ base }}assets/style.css">
+</head>
+<body>
+  <header class="site-header"><nav class="wrap" aria-label="Principal">
+    <a class="brand" href="{{ base }}index.html"><span aria-hidden="true">▤</span> Mis compras</a>
+  </nav></header>
+  <main class="wrap">{% block content %}{% endblock %}</main>
+  {% if reload_version %}
+  <script>
+    const version = {{ reload_version|tojson }};
+    async function checkForChanges() {
+      try {
+        const response = await fetch("{{ base }}__reload");
+        if (response.ok && (await response.text()) !== version) {
+          window.location.reload();
+          return;
+        }
+      } catch {
+        // El servidor puede estar reiniciándose.
+      }
+      window.setTimeout(checkForChanges, 1000);
+    }
+    window.setTimeout(checkForChanges, 1000);
+  </script>
+  {% endif %}
+</body>
+</html>

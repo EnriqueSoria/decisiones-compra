@@ -1,0 +1,13 @@
+{
+  "url": "https://lavilahome.com/",
+  "titulo": "Lavila Home | Muebles que hablan de ti",
+  "modelo": "Lavila Home | Muebles que hablan de ti",
+  "imagen": "https://lavilahome.com/cdn/shop/files/Editorial_Marina_Arenas_desktop.jpg?v=1773858646",
+  "iconos": [
+    "https://lavilahome.com/cdn/shop/files/Logo_Lavila_redondo_beige_favicon.png?crop=center&height=32&v=1767886391&width=32",
+    "https://lavilahome.com/cdn/shop/files/Logo_Lavila_redondo_beige_favicon.png?crop=center&height=192&v=1767886391&width=192",
+    "https://lavilahome.com/cdn/shop/files/Logo_Lavila_redondo_beige_favicon.png?crop=center&height=180&v=1767886391&width=180",
+    "https://lavilahome.com/favicon.ico"
+  ],
+  "icono_local": "bf3efd6757bbfee15bea7d93db687cc7b6cd82f01bb53872352e134e82ca60ea.png"
+}

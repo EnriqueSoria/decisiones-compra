@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+      target: runtime
+      args:
+        COMPRA_UID: "${COMPRA_UID:-1000}"
+        COMPRA_GID: "${COMPRA_GID:-1000}"
+    ports:
+      - "127.0.0.1:${COMPRA_PORT:-8000}:8000"
+    volumes:
+      - ./cache:/app/cache
+      - ./datos:/app/datos:ro
+      - ./templates:/app/templates:ro
+      - ./static:/app/static:ro
